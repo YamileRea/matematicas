@@ -456,6 +456,112 @@ x \approx \pm 0.577
 
 %------ Ejercicio 05 ------%
 \section*{Ejercicio 16 sección 3.7 del Stewart}
+\subsection*{a)}
+\textbf{El volumen de una célula esférica en crecimiento es $V=(4/3) \pi r^3$, donde el radio r se mide en mirómetros $1\mu m = 10^{-6}m$). Encuentre la razón de cambio promedio de V respecto a r, cuando éste cambia de} \\
+\textbf{I) 5 a 8 $\mu m$} \ \ \ \textbf{II) 5 a 6 $\mu m$} \ \ \ \textbf{III) 5 a 5.1 $\mu m$}\\
+Tenemos que la razón promedio está dada por:
+\begin{equation*}
+  \text{razón promedio}=\frac{\Delta V}{\Delta r}
+\end{equation*}
+con
+\begin{equation*}
+  V=\frac{4}{3}\pi r^3
+\end{equation*}
+\textbf{I. 5 a 8 $\mu m$}\\
+Con $r \ = \ 5\mu m$
+\begin{equation*}
+  V=\frac{4}{3}\pi (5\mu m)^3=\frac{500}{3}\pi\mu m ^3
+\end{equation*}
+Con $r \ = \ 8 \mu m $
+\begin{equation*}
+  V=\frac{4}{3}\pi (8\mu m)^3=\frac{2048}{3}\pi\mu m ^3
+\end{equation*}
+De aquí
+\begin{equation*}
+  \begin{split}
+    \Delta V &= V_2-V_1=\frac{2048}{3}\pi-\frac{500}{3}\pi=516\pi \mu m^3 \\
+    \Delta r &= 8-5 = 3 \mu m
+  \end{split}
+\end{equation*}
+Y sustituimos en la razón de cambio.
+\begin{equation*}
+  \frac{\Delta V}{\Delta r}=\frac{516\mu m^3}{3 \mu m}\approx 540.35\mu m^2.
+\end{equation*}
+
+\textbf{II. 5 a 6 $\mu m$}\\
+Con $r \ = \ 5\mu m$
+\begin{equation*}
+  V=\frac{4}{3}\pi (5\mu m)^3=\frac{500}{3}\pi\mu m ^3
+\end{equation*}
+Con $r \ = \ 6 \mu m $
+\begin{equation*}
+  V=\frac{4}{3}\pi (6\mu m)^3=288\pi\mu m ^3
+\end{equation*}
+De aquí
+\begin{equation*}
+  \begin{split}
+    \Delta V &= V_2-V_1=288\pi-\frac{500}{3}\pi=\frac{364}{3}\pi \mu m^3 \\
+    \Delta r &= 6-5 = 1 \mu m
+  \end{split}
+\end{equation*}
+Y sustituimos en la razón de cambio.
+\begin{equation*}
+  \frac{\Delta V}{\Delta r}=\frac{\frac{364}{3}\mu m^3}{3 \mu m}=\frac{364}{3}\mu m^2\approx 381.18 \mu m^2.
+\end{equation*}
+
+\textbf{II. 5 a 5.1 $\mu m$}\\
+Con $r \ = \ 5\mu m$
+\begin{equation*}
+  V=\frac{4}{3}\pi (5\mu m)^3=\frac{500}{3}\pi\mu m ^3
+\end{equation*}
+Con $r \ = \ 5.1 \mu m $
+\begin{equation*}
+  V=\frac{4}{3}\pi (5.1\mu m)^3 \approx 555.6472\pi\mu m ^3
+\end{equation*}
+De aquí
+\begin{equation*}
+  \begin{split}
+    \Delta V &= V_2-V_1=555.6472-\frac{500}{3}\pi\approx 32.0492 \mu m^3 \\
+    \Delta r &= 5.1-5 = 0.1 \mu m
+  \end{split}
+\end{equation*}
+Y sustituimos en la razón de cambio.
+\begin{equation*}
+  \frac{\Delta V}{\Delta r}=\frac{32.0992 \mu m^3}{0.1 \mu m}=\frac{364}{3}\mu m^2\approx 320.492 \mu m^2.
+\end{equation*}
+
+\subsection*{b)}
+\textbf{Halle la razón de cambio instantánea de $V$ respecto a $r$, cuando $r=5\mu m$.}\\
+Sabemos que la razón de cambio instantánea está dada por la derivada de V respecto a r.
+\begin{equation*}
+  \begin{split}
+    \frac{dV}{dr}&=\frac{d}{dr}\left(\frac{4}{3}\pi r^3\right) \\
+    &= 3\cdot\frac{4}{3}\pi r^2 = 4\pi r^2
+  \end{split}
+\end{equation*}
+Como nos interesa la variación instantánea en $r=5\mu m$
+\begin{equation*}
+  \left.\frac{dV}{dr}\right|_{r=5}=4\pi(5)^2=4\pi(25)=100\pi\mu m^2
+\end{equation*}
+
+
+
+\subsection*{c)}
+\textbf{Demuestre que la razón de cambio del volumen de una esfera respecto a su radio es igual a su área superficial. Explique geométricamente por qué esto es cierto. Argumente por analogía con el ejercicio 13 c).}\\
+Sabemos que:\\
+El área superficial de una esfera está dada por $A=4\pi r^2$\\
+El volumen de una esfera está dado por $V=(4/3)\pi r^3$\\
+También, anteriormente calculamos la razón de cambio instantánea del volumen obteniendo.
+\begin{equation*}
+  \frac{dV}{dr}=\frac{d}{r}\left(\frac{4}{3}\pi r^3 \right)=4\pi r^2=A
+\end{equation*}
+$\therefore$ la razón de cambio instantánea es igual al área superficial. \\
+Geométricamente esto es cierto ya que, al aumentar el radio de una esfera, el cambio en su volúmen está directamente relacionado con el área superficial, esto porque el área superficial es lo que envuelve al volumen, lo contiene y parámetros de un área determinan la variación al instante de su volúmen.
+\begin{center}
+    \includegraphics[width=13cm]{./imagenes/celularadio.png}
+\end{center}
+
+
 %------ Ejercicio 06 ------%
 \section*{Ejercicio 19 sección 3.7 del Stewart}
 La cantidad de carga, Q, en coulombs c) que ha pasado por un punto de un alambre hasta el tiempo t (medido en segundos) se expresa con Q(t) = t³ -2t² +6t +2. Encuentre la corriente cuando a)t = 0.5 s y b)t = 1 s. [Véase el ejemplo 3. La unidad de corriente es el ampere
