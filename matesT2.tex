@@ -60,8 +60,301 @@
 \section*{Indicaciones}
 
 %------ Ejercicio 01 ------%
-
+\section*{Construcción de una montaña rusa sección 3.1 del Stewart }
 %------ Ejercicio 02 ------%
+\section*{¿Dónde debería un piloto iniciar el aterrizaje? sección 3.4 del Stewart }
+%------ Ejercicio 03 ------%
+\section*{Ejercicio 80 sección 3.5 del Stewart}
+
+En la figura se muestra una lámpara colocada tres unidades hacia la derecha del eje \( y \) y una sombra creada por la región elíptica \( x^2 + 4y^2 \leq 5 \). Si el punto \( (-5, 0) \) está en el borde de la sombra, ¿qué tan arriba del eje \( x \) está colocada la lámpara?
+
+\begin{center}
+    \includegraphics[height=7.0cm]{./imagenes/lampara.png}
+\end{center}
+
+Se nos da la ecuación de una elipse:
+
+\[
+x^2 + 4y^2 = 5
+\]
+
+Una lámpara está colocada en el punto \( (3, h) \) y un punto de intersección de la sombra proyectada se encuentra en \( (-5, 0) \). Nuestro objetivo es encontrar el valor de \(h\).
+
+\subsection{Paso 1: Ecuación de la recta que conecta los puntos}
+
+La pendiente \(m\) de la recta que pasa por los puntos \( (-5, 0) \) y \( (3, h) \) es:
+
+\[
+m = \frac{h - 0}{3 - (-5)} = \frac{h}{8}
+\]
+
+Por lo tanto, la ecuación de la recta que conecta estos dos puntos es:
+
+\[
+y = \frac{h}{8}(x + 5)
+\]
+
+\subsection*{Paso 2: Sustitución en la ecuación de la elipse}
+
+Sabemos que la recta debe intersectar la elipse, por lo que sustituimos la ecuación de la recta \( y = \frac{h}{8}(x + 5) \) en la ecuación de la elipse \( x^2 + 4y^2 = 5 \):
+
+\[
+x^2 + 4\left( \frac{h}{8}(x + 5) \right)^2 = 5
+\]
+
+Expandiendo el término al cuadrado:
+
+\[
+x^2 + 4\left( \frac{h^2}{64}(x + 5)^2 \right) = 5
+\]
+
+Simplificando:
+
+\[
+x^2 + \frac{h^2}{16}(x^2 + 10x + 25) = 5
+\]
+
+Multiplicamos ambos lados de la ecuación por 16 para eliminar los denominadores:
+
+\[
+16x^2 + h^2(x^2 + 10x + 25) = 80
+\]
+
+\subsection*{Paso 3: Resolver para \(h\)}
+
+Para resolver \(h\), usamos el hecho de que la recta debe intersectar la elipse. Elegimos el punto \(x = 0\) para simplificar el cálculo. Sustituyendo \(x = 0\) en la ecuación:
+
+\[
+16(0)^2 + h^2(0^2 + 10(0) + 25) = 80
+\]
+
+Simplificando:
+
+\[
+25h^2 = 80
+\]
+
+Despejando \(h\):
+
+\[
+h^2 = \frac{80}{25} = 3.2
+\]
+
+Por lo tanto, la altura \(h\) es:
+
+\[
+h = \sqrt{3.2} \approx 1.79
+\]
+
+\subsection*{Conclusión}
+
+La lámpara está colocada aproximadamente a una altura de \(h \approx 1.79\) unidades sobre el eje \(x\).
+
+%------ Ejercicio 04 ------%
+\section*{Ejercicio 40 sección 3.1 del Anton-Bivens-Davis}
+
+Utilice una herramienta de gráficos para generar los gráficos de f' y f'' sobre el intervalo indicado: luegoutilice esos gráficos para estimar las coordenadas x de los puntos de inflexión de f, los intervalos en los que es cóncava hacia arriba o hacia abajo y los intervalos en los que f aumenta o disminuye. Verifique sus estimaciones graficando f.
+
+\subsection*{Función y Derivadas}
+
+Consideramos la función:
+
+\[
+f(x) = \frac{1}{1+x^2} \quad \text{en el intervalo} \quad -5 \leq x \leq 5.
+\]
+
+\subsubsection*{Primera Derivada}
+
+La primera derivada de \( f(x) \) es:
+
+\[
+f'(x) = \frac{(1+x^2) \cdot 0 - 1 \cdot (2x)}{(1+x^2)^2} = \frac{-2x}{(1+x^2)^2}.
+\]
+
+\subsubsection*{Segunda Derivada}
+
+La segunda derivada de \( f(x) \) es:
+
+\[
+f''(x) = \frac{(1+x^2)^2 \cdot (0) - (-2x) \cdot (2(1+x^2)(2x))}{(1+x^2)^4} = \frac{6x^2 - 2}{(1+x^2)^3}.
+\]
+
+\begin{center}
+    \includegraphics[height=15.0cm]{./imagenes/grafica1.png}
+\end{center}
+
+Aquí tienes la gráfica de las derivadas primera \( f'(x) \) (en azul) y segunda \( f''(x) \) (en rojo) de la función \( f(x) = \frac{1}{1+x^2} \) en el intervalo \( -5 \leq x \leq 5 \).
+
+\begin{itemize}
+    \item \( f'(x) \) muestra los intervalos donde la función es creciente o decreciente.
+    \item \( f''(x) \) permite identificar los puntos de inflexión y la concavidad de la función.
+\end{itemize}
+
+Puedes observar cómo \( f'(x) = 0 \) en \( x = 0 \), y cómo \( f''(x) \) cambia de signo en los puntos de inflexión \( x = \pm \sqrt{3} \).
+
+A partir de los gráficos de \( f'(x) \) (azul) y \( f''(x) \) (rojo), podemos hacer las siguientes estimaciones:
+
+\subsection*{1. Puntos de inflexión:}
+
+Los puntos de inflexión ocurren cuando la derivada segunda \( f''(x) \) cambia de signo. Observando la gráfica roja de \( f''(x) \), parece que cambia de signo alrededor de \( x \approx \pm 0.577 \), lo cual coincide con la fórmula teórica de los puntos de inflexión para \( f(x) = \frac{1}{1 + x^2} \).
+
+Entonces, los puntos de inflexión son aproximadamente:
+\[
+x \approx \pm 0.577
+\]
+
+\subsection*{2. Concavidad:}
+
+\begin{itemize}
+    \item \textbf{Cóncava hacia arriba:} La función \( f(x) \) es cóncava hacia arriba cuando \( f''(x) > 0 \). Observamos en la gráfica que \( f''(x) \) es positiva cuando \( |x| > 0.577 \). Así que la función es cóncava hacia arriba en los intervalos:
+    \[
+    (-\infty, -0.577) \cup (0.577, \infty)
+    \]
+    
+    \item \textbf{Cóncava hacia abajo:} \( f(x) \) es cóncava hacia abajo cuando \( f''(x) < 0 \). Esto ocurre en el intervalo donde \( |x| < 0.577 \), es decir:
+    \[
+    (-0.577, 0.577)
+    \]
+\end{itemize}
+
+\subsection*{3. Crecimiento y decrecimiento:}
+
+\begin{itemize}
+    \item \textbf{Crecimiento:} La función \( f(x) \) es creciente cuando \( f'(x) > 0 \). En la gráfica verde, vemos que esto ocurre para \( x < 0 \), lo que indica que la función es creciente en el intervalo:
+    \[
+    (-5, 0)
+    \]
+    
+    \item \textbf{Decrecimiento:} La función \( f(x) \) es decreciente cuando \( f'(x) < 0 \). En la gráfica verde, esto ocurre para \( x > 0 \), lo que indica que la función es decreciente en el intervalo:
+    \[
+    (0, 5)
+    \]
+\end{itemize}
+
+\subsection*{Resumen:}
+
+\begin{itemize}
+    \item \textbf{Puntos de inflexión:} \( x \approx \pm 0.577 \).
+    \item \textbf{Concavidad:}
+    \begin{itemize}
+        \item Cóncava hacia arriba en \( (-\infty, -0.577) \cup (0.577, \infty) \).
+        \item Cóncava hacia abajo en \( (-0.577, 0.577) \).
+    \end{itemize}
+    \item \textbf{Crecimiento:} \( (-5, 0) \).
+    \item \textbf{Decrecimiento:} \( (0, 5) \).
+\end{itemize}
+
+\begin{center}
+    \includegraphics[height=15.0cm]{./imagenes/grafica.png}
+\end{center}
+
+%------ Ejercicio 05 ------%
+\section*{Ejercicio 16 sección 3.7 del Stewart}
+%------ Ejercicio 06 ------%
+\section*{Ejercicio 19 sección 3.7 del Stewart}
+La cantidad de carga, Q, en coulombs c) que ha pasado por un punto de un alambre hasta el tiempo t (medido en segundos) se expresa con Q(t) = t³ -2t² +6t +2. Encuentre la corriente cuando a)t = 0.5 s y b)t = 1 s. [Véase el ejemplo 3. La unidad de corriente es el ampere
+(1A = 1C/s)]. ¿En qué momento la corriente es la más baja?
+
+La cantidad de carga \( Q(t) \), en coulombs, que ha pasado por un punto de un alambre hasta el tiempo \( t \) (medido en segundos) está dada por la ecuación:
+
+\[
+Q(t) = t^3 - 2t^2 + 6t + 2
+\]
+
+Debemos encontrar la corriente cuando:
+
+\begin{itemize}
+    \item[a)] \( t = 0.5 \, \text{s} \)
+    \item[b)] \( t = 1 \, \text{s} \)
+\end{itemize}
+
+\subsection*{Paso 1: Derivada de la carga con respecto al tiempo}
+
+La corriente \( I(t) \) es la derivada de la carga \( Q(t) \) con respecto al tiempo \( t \):
+
+\[
+I(t) = \frac{dQ(t)}{dt}
+\]
+
+Primero, derivamos la función \( Q(t) \):
+
+\[
+\frac{d}{dt} \left( t^3 - 2t^2 + 6t + 2 \right) = 3t^2 - 4t + 6
+\]
+
+Por lo tanto, la corriente en función del tiempo es:
+
+\[
+I(t) = 3t^2 - 4t + 6
+\]
+
+\subsection*{Paso 2: Sustitución de valores}
+
+\begin{itemize}
+    \item[a)] Para \( t = 0.5 \, \text{s} \):
+
+    \[
+    I(0.5) = 3(0.5)^2 - 4(0.5) + 6 = 3(0.25) - 2 + 6 = 0.75 - 2 + 6 = 4.75 \, \text{A}
+    \]
+
+    \item[b)] Para \( t = 1 \, \text{s} \):
+
+    \[
+    I(1) = 3(1)^2 - 4(1) + 6 = 3(1) - 4 + 6 = 3 - 4 + 6 = 5 \, \text{A}
+    \]
+\end{itemize}
+
+\subsection*{Respuesta}
+
+\begin{itemize}
+    \item La corriente cuando \( t = 0.5 \, \text{s} \) es \( 4.75 \, \text{A} \).
+    \item La corriente cuando \( t = 1 \, \text{s} \) es \( 5 \, \text{A} \).
+\end{itemize}
+
+\subsection*{Encontrar el momento en que la corriente es más baja}
+
+Para encontrar el momento en que la corriente es más baja, necesitamos encontrar el mínimo de la función de corriente \( I(t) = 3t^2 - 4t + 6 \).
+
+\subsection*{Paso 1: Derivar la función de corriente}
+
+Primero, derivamos \( I(t) \) con respecto al tiempo \( t \) para encontrar los puntos críticos:
+
+\[
+\frac{dI(t)}{dt} = 6t - 4
+\]
+
+\subsection*{Paso 2: Encontrar los puntos críticos}
+
+Igualamos la derivada a cero para encontrar el valor de \( t \) en el cual la corriente puede ser mínima:
+
+\[
+6t - 4 = 0
+\]
+
+\[
+6t = 4
+\]
+
+\[
+t = \frac{4}{6} = \frac{2}{3} \, \text{s}
+\]
+
+\subsection*{Paso 3: Verificación}
+
+Para asegurarnos de que este es un mínimo, podemos evaluar la concavidad usando la segunda derivada:
+
+\[
+\frac{d^2I(t)}{dt^2} = 6
+\]
+
+Como la segunda derivada es positiva (\( 6 > 0 \)), la función es cóncava hacia arriba, lo que confirma que \( t = \frac{2}{3} \, \text{s} \) es un mínimo.
+
+\subsection*{Respuesta}
+
+La corriente es más baja en \( t = \frac{2}{3} \, \text{s} \).
+
+%------ Ejercicio 06 ------%
+\section*{Ejercicio 21 sección 3.7 del Stewart}
 
 
 
