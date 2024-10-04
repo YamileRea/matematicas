@@ -20,7 +20,7 @@
 %------ Texto aleatorio ----- %
 
 \usepackage{lipsum}
-
+\usepackage{enumitem}
 
 
 \begin{document}
@@ -37,12 +37,12 @@
     	\begin{center}
     	\textbf{\large Universidad Nacional Autónoma de México}\\[0.1cm]
         \textbf{Facultad de Ciencias}\\[0.1cm]
-        \textbf{Estructuras Discretas $|$ Grupo 7020}\\[0.1cm]
-        \textbf{Tarea 2: Lógica Preposicional}\\[0.1cm]
+        \textbf{Matemáticas para las Ciencias Aplicadas $|$ Grupo 7048}\\[0.1cm]
+        \textbf{Tarea 2}\\[0.1cm]
         Real Araiza Yamile\\[0.1cm]
         Rodríguez López Luis Fernando\\[0.1cm]
         Tenorio Reyes Ihebel Luro\\[0.1cm]
-        27/09/2024
+        04/10/2024
     	\end{center}
     \end{minipage}\hfill
     \begin{minipage}{3cm}
@@ -269,6 +269,113 @@ Aunque a simple vista se vean muy parecidos, es notorio el suavizado que hacen l
 
 %------ Ejercicio 02 ------%
 \section*{¿Dónde debería un piloto iniciar el aterrizaje? sección 3.4 del Stewart }
+En la figura se muestra una trayectoria de aproximación para el aterrizaje de un avión, que satisface
+las condiciones siguientes:
+\begin{enumerate}[label=(\roman*)]
+    \item La altura de crucero es $h$ cuando se inicia el descenso a una distancia $\ell$ del punto de contacto con la pista en el origen.
+    \item El piloto debe mantener una rapidez horizontal constante $v$ a todo lo largo del descenso.
+    \item El valor absoluto de la aceleración vertical no debe sobrepasar una constante $k$ (la cual es mucho menor que la aceleración debida a la gravedad).
+    \end{enumerate}
+\subsection*{1. 
+Encuentre un polinomio cúbico $P(x) = ax^3 + bx^2 + cx + d$ que satisfaga la condición i), imponiendo condiciones adecuadas sobre $P(x)$ y $P'(x)$ en el inicio del descenso y el contacto con la pista.}\\
+Establecemos las condiciones para $P(x)$ y la derrivada $P'(x)$:}
+\begin{align*}
+P(0) &= 0 \quad \text{(punto de contacto)} \\
+P(\ell) &= h \quad \text{(altura inicial)} \\
+P'(0) &= 0 \quad \text{(derivada en contacto)} \\
+P'(\ell) &= 0 \quad \text{(derivada en inicio)}
+\end{align*}
+Considerando que $x = l$, tenemos $P(l) = al^3 + bl^2 + cl + d = h$. De $P(0) = d = 0$. De $P'(0) = c = 0$. Entonces $P(l) = al^3 + bl^2 = h$ y $P'(\ell) = 3a\ell^2 + 2b\ell = 0$
+\\Ahora empezamos factorizando a la derivada \[ \ell(3a\ell + 2b) = 0 \] y despejamos a b:\\
+\[ b = -\frac{3a\ell}{2} \] En siguiente sustituimos nuestra b en $P(l) = h$:\\
+\[ a\ell^3 + \left( -\frac{3al}{2} \right)\ell^2 = h \]
+\[ a\ell^3 - \frac{3al^3}{2} = h \]
+\[ a\ell^3\left(1 - \frac{3}{2}\right) = h \]
+\[ -\frac{al^3}{2} = h \]
+\[ a = -\frac{2h}{\ell^3} \]
+\\Finalmente, sustituimos \( a \) y \( b \) en el polinomio:
+\[ P(x) = -\frac{2h}{\ell^3}x^3 + \frac{3h}{\ell^2}x^2 \]
+
+\subsection*{2. 
+Use las condiciones (ii) y (iii) para demostrar que:}
+\begin{equation*}
+\frac{6hv^2}{\ell^2} \leq k
+\end{equation*}
+Usamos la condición (ii) (rapidez horizontal constante \( v \)) y la condición (iii) (la aceleración vertical no debe exceder \( k \)).
+\\La aceleración vertical es la segunda derivada de \( P(x) \), y hemos encontrado que:
+\begin{equation*}
+P(x) = -\frac{2h}{\ell^3}x^3 + \frac{3h}{\ell^2}x^2
+\end{equation*}
+La primera derivada es:
+\begin{equation*}
+P'(x) = -\frac{6h}{\ell^3}x^2 + \frac{6h}{\ell^2}x
+\end{equation*}
+Y la segunda derivada es:
+\begin{equation*}
+P''(x) = -\frac{12h}{\ell^3}x + \frac{6h}{\ell^2}
+\end{equation*}
+Evaluamos en \( x = \ell \):
+\begin{equation*}
+P''(\ell) = -\frac{12h}{\ell^3}\ell + \frac{6h}{\ell^2} = -\frac{12h}{\ell^2} + \frac{6h}{\ell^2} = -\frac{6h}{\ell^2}
+\end{equation*}
+\\Esta es la aceleración vertical en función de \( x \). Sin embargo, debido a que el avión se mueve horizontalmente a velocidad constante \( v \), la aceleración total en función del tiempo es:
+\begin{equation*}
+\text{Aceleración vertical} = P''(x) \cdot \left( \frac{dx}{dt} \right)^2 = P''(x) \cdot v^2
+\end{equation*}
+\\Sustituyendo \( P''(\ell) \):
+\begin{equation*}
+\text{Aceleración vertical} = \left( -\frac{6h}{\ell^2} \right) v^2 = -\frac{6hv^2}{\ell^2}
+\end{equation*}
+\\Por la condición (iii), sabemos que el valor absoluto de la aceleración vertical no debe exceder \( k \), así que:
+\begin{equation*}
+\frac{6hv^2}{\ell^2} \leq k
+\end{equation*}
+
+\subsection*{3. 
+Suponga que una aerolínea comercial decide no permitir que la aceleración vertical de un avión sea mayor que $k = 860 mi/h^2$. Si la altitud de crucero de un avión es de 35 000 pies y la rapidez de $300 mi/h$, ¿a qué distancia del aeropuerto debe el piloto iniciar el descenso?}
+Para este inciso, usamos la fórmula derivada anteriormente:
+\begin{equation*}
+\frac{6hv^2}{\ell^2} \leq k
+\end{equation*}
+\\Se nos proporciona \( k = 860 \, \text{mi/h}^2 \), \( h = 35,000 \, \text{pies} \), y \( v = 300 \, \text{mi/h} \). Primero, convertimos la altura \( h \) a millas:
+\begin{equation*}
+h = \frac{35,000 \, \text{pies}}{5280 \, \text{pies}} = 6.6287
+ \, \text{millas}
+\end{equation*}
+\\Sustituimos estos valores en la fórmula y despejamos \( \ell \):
+\begin{equation*}
+\frac{6 \cdot 6.6287
+ \cdot (300)^2}{\ell^2} = 860
+\end{equation*}
+Multiplicamos:
+\begin{equation*}
+\frac{6 \cdot 6.6287
+ \cdot 90,000}{\ell^2} = 860
+\end{equation*}
+\begin{equation*}
+\frac{3,579,498}{\ell^2} = 860
+\end{equation*}
+Despejamos \( \ell^2 \):
+\begin{equation*}
+\ell^2 = \frac{3,579,498}{860}
+\end{equation*}
+\begin{equation*}
+\ell^2\ = 4162.20
+\end{equation*}
+Tomamos la raíz cuadrada:
+\begin{equation*}
+\ell = \sqrt{4162.20} = 64.51 \, \text{millas}
+\end{equation*}
+\\Por lo tanto, el piloto debe iniciar el descenso a 64.51 millas del aeropuerto.
+
+\subsection*{4. 
+Trace la grafica de la trayectoria de aproximación si se satisfacen las condiciones que se enuncian en el problema 3.}
+\begin{center}
+    \includegraphics[width=15cm]{./imagenes/graficavion.png}
+  \end{center}
+
+
+
 %------ Ejercicio 03 ------%
 \section*{Ejercicio 80 sección 3.5 del Stewart}
 
@@ -667,6 +774,101 @@ La corriente es más baja en \( t = \frac{2}{3} \, \text{s} \).
 
 %------ Ejercicio 06 ------%
 \section*{Ejercicio 21 sección 3.7 del Stewart}
+La fuerza $F$ que actúa sobre un cuerpo con masa $m$ y velocidad $v$ es igual a la razón de cambio del momentum o cantidad
+ de movimiento: $F = (d/dt)(mv)$. Si $m$ es constante, esto se convierte en $F = ma$, donde $a = dv/dt$ es la aceleración. Pero en la teoría de la relatividad, la masa de una partícula varía con
+ $v$ como sigue: $m = m_0/\sqrt{1 - v^2/c^2}$, donde $m_0$ es la masa de la partícula en reposo y $c$ es la velocidad de la luz. Demuestre que
+ \begin{equation*}
+  F = \frac{m_0 a}{(1 - v^2 / c^2)^{3/2}}
+  \end{equation*}
+\\Partimos de la definición de fuerza como la derivada del momentum:
+
+  \begin{equation}
+      F = \frac{d}{dt}(mv)
+  \end{equation}
+\\Donde \( m \) es la masa relativista del objeto, y su valor depende de la velocidad \( v \) según la fórmula:
+  
+  \begin{equation}
+      m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}}
+  \end{equation}
+\\Aquí, \( m_0 \) es la masa en reposo de la partícula y \( c \) es la velocidad de la luz. Nuestro objetivo es derivar la expresión para la fuerza relativista:
+  
+  \[
+      F = \frac{m_0 a}{(1 - v^2/c^2)^{3/2}}
+  \]
+\\donde \( a = \frac{dv}{dt} \) es la aceleración.
+  
+  \subsection*{Aplicación de la regla del producto}
+  
+Empezamos aplicando la regla del producto a la derivada de \( F = \frac{d}{dt}(mv) \):
+  
+  \begin{equation}
+      F = \frac{d}{dt}(mv) = v \frac{dm}{dt} + m \frac{dv}{dt}
+  \end{equation}
+  \\En esta expresión, el primer término representa el cambio de masa con respecto al tiempo, y el segundo término es el término clásico de la fuerza, con \( m \) dependiendo de \( v \).
+  
+  \subsection*{Derivada de la masa relativista}
+  
+Sabemos que la masa relativista \( m \) está dada por:
+  
+  \[
+      m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}}
+  \]
+  \\Para encontrar \( \frac{dm}{dt} \), aplicamos la regla de la cadena. Derivamos \( m \) con respecto a \( v \), y luego multiplicamos por \( \frac{dv}{dt} \):
+  
+  \[
+      \frac{dm}{dt} = m_0 \cdot \frac{d}{dt}\left(\frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\right) = m_0 \cdot \frac{1}{2}\left(1 - \frac{v^2}{c^2}\right)^{-\frac{3}{2}} \cdot \left(-\frac{2v}{c^2}\right) \cdot \frac{dv}{dt}
+  \]
+  
+Simplificando, obtenemos:
+  
+  \begin{equation}
+      \frac{dm}{dt} = \frac{m_0 v}{c^2 \left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}} \cdot \frac{dv}{dt}
+  \end{equation}
+  
+  \subsection*{Sustitución en la ecuación de la fuerza}
+  
+  Sustituimos \( \frac{dm}{dt} \) en la ecuación para la fuerza:
+  
+  \[
+      F = v \left(\frac{m_0 v}{c^2 \left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}} \cdot \frac{dv}{dt}\right) + m \cdot \frac{dv}{dt}
+  \]
+  
+\\Usando la expresión para \( m \), podemos escribir la ecuación completa como:
+  
+  \[
+      F = \frac{m_0 v^2}{c^2 \left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}} \cdot \frac{dv}{dt} + \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}} \cdot \frac{dv}{dt}
+  \]
+  
+  \subsection*{Se factoriza \( \frac{dv}{dt} \)}
+  
+  Podemos factorizar \( \frac{dv}{dt} \) de ambos términos:
+  
+  \[
+      F = m_0 \cdot \frac{dv}{dt} \cdot \left[\frac{v^2}{c^2 \left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}} + \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\right]
+  \]
+  
+  \subsection*{Buscamos un denominador común}
+  
+  Para simplificar, encontramos un denominador común en el término entre corchetes. El denominador común es \( \left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}} \):
+  
+  \[
+      F = m_0 \cdot \frac{dv}{dt} \cdot \frac{\frac{v^2}{c^2} + \left(1 - \frac{v^2}{c^2}\right)}{\left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}}
+  \]
+  
+  Simplificando el numerador:
+  
+  \[
+      F = m_0 \cdot \frac{dv}{dt} \cdot \frac{1}{\left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}}
+  \]
+  
+  \subsection*{Expresión final}
+  
+  Como \( a = \frac{dv}{dt} \), finalmente obtenemos la expresión de la fuerza relativista:
+  
+  \[
+      F = \frac{m_0 a}{\left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}}
+  \]
+\\Por lo tanto, la ecuación queda demostrada.
 
 
 
