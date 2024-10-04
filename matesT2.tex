@@ -7,7 +7,6 @@
 \usepackage[left=2cm,right=2cm,top=1.8cm,bottom=2.3cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\documentclass{article}
 \pagestyle{fancy}
 \fancyhf{}
 \rfoot{\textit{Página \thepage \hspace{1pt} de \pageref{LastPage}}}
@@ -41,7 +40,7 @@
         \textbf{Estructuras Discretas $|$ Grupo 7020}\\[0.1cm]
         \textbf{Tarea 2: Lógica Preposicional}\\[0.1cm]
         Real Araiza Yamile\\[0.1cm]
-        Rodrdíguez López Luis Fernando\\[0.1cm]
+        Rodríguez López Luis Fernando\\[0.1cm]
         Tenorio Reyes Ihebel Luro\\[0.1cm]
         27/09/2024
     	\end{center}
@@ -60,7 +59,214 @@
 \section*{Indicaciones}
 
 %------ Ejercicio 01 ------%
+
 \section*{Construcción de una montaña rusa sección 3.1 del Stewart }
+Suponga que se le solicita que diseñe el primer ascenso y descenso de una nueva montaña rusa. Después de estudiar fotografías de sus montañas rusas predilectas, decide hacer la pendiente de ascenso 0.8 y la de descenso -1.6. Opta por conectar estos dos tramos rectos $y=L_1(x)$ y $y=L_2(x)$ mediante parte de una parábola $y=f(x)=ax^2+bx+c$, donde $x$ y $f(x)$ se miden en pies. Para que el trayecto sea uniforme, no pueden existir cambios abruptos de dirección, por lo que se desea que el trayecto sea uniforme, no pueden existir cambios abruptos de dirección, por lo que se desea que los segmentos de recta $L_1$ y $L_2$ sean tangentes a la parábola en los puntos de transición P y Q.
+Para simplificar las ecuaciones, decide situar el origen en P.
+
+\subsection*{Parte 1.}
+\subsubsection*{a) Suponga que la distancia horizontal entre P y Q es 100 pies. Escriba ecuaciones en a, b y c que aseguren que el trayecto sea suave en los puntos de transición}
+Sabemos que la curva f(x) debe ser tangente a $L_1$ y $L_2$, por lo que necesitamos su derivada.
+\begin{equation*}
+  f'(x)=2ax+b
+\end{equation*}
+De aquí, podemos decir que f'(x) evaluada en 0 y 100 (por la distancia horizontal de 100ft) debe dar 4/5 y -8/5 respectivamente, para C, sabemos que es equivalente a la posición vertical vértice de f, es decir, el punto más alto, donde la pendiente tangente es igual a 0
+\begin{equation*}
+  \begin{split}
+    2ax+b &= 0 \\
+    2ax &= b \\
+    x &= \frac{b}{2a}
+  \end{split}
+\end{equation*}
+Y para obtener c, igualamos $ax²+by+c$ con 0 y lo evaluamos al mismo tiempo con 0, esto por que sabemos que pasa por el punto (0,0) \\
+\begin{equation*}
+  \begin{split}
+    \textbf{Ec. 1. } & 2a(0)+b \ = \ \frac{4}{5} \\
+    \textbf{Ec. 2. } & 2a(100)+b \ = \ -\frac{8}{5} \\
+    \textbf{Ec. 3. } & a(0)^2+b(0)+c=0
+  \end{split}
+\end{equation*}
+\subsubsection*{b) Resuelva las ecuaciones del inciso a para a, b y c para hallar una fórmula para f(x)}
+\textbf{Ec. 1.} \\
+\begin{equation*}
+  \begin{split}
+    2a(0)+b &= \frac{4}{5} \\
+    b &= \frac{4}{5}
+  \end{split}
+\end{equation*}
+\textbf{Ec. 2.} \\
+\begin{equation*}
+  \begin{split}
+    2a(100)+b &= -\frac{8}{5} \\
+    2a(100) &= -\frac{8}{5}-\underbrace{b}_{\text{Sustituimos}} \\
+    200a &= -\frac{8}{5}-\frac{4}{5} \\
+    a &= -\frac{12}{5\cdot200} \\
+    a &= -\frac{3}{250}
+  \end{split}
+\end{equation*}
+\textbf{Ec. 3.} \\
+Sustiumos en f(0)=0 para obtener c.
+\begin{equation*}
+  \begin{split}
+    -\frac{3}{250}(0)^2+\frac{4}{5}(0)+c &= 0 \\
+    c &= 0
+  \end{split}
+\end{equation*}
+$\therefore$ podemos concluir que $f(x)$ está dada por:
+\begin{equation*}
+  f(x)=-\frac{3}{250}x^2+\frac{4}{5}b
+\end{equation*}
+\subsubsection*{c) Dibuje $L_1$, $f(x)$ y $L_2$ para verificar gráficamente que las transiciones sean suaves.}
+tenemos f(x) pero necesitamos obtener $L_1$ y $L_2$. \\
+\textbf{Ec. $L_1(x)$.} \\
+De la forma de la recta y=mx+b, tenemos que m = 4/5 y como la intersección en el eje \textit{y} es en 0, b = 0. \\
+$\therefore L_1(x)=\frac{4}{5}x$. \\
+\textbf{Ec. $L_2(x)$.}\\
+Necesitamos un un punto por el que pase $L_2$, y sabemos que tiene un punto que coincide con f(x) cuando x está evaluado en 100, por tanto, resolvemos f(100).
+\begin{equation*}
+  \begin{split}
+    f(100) &= \underbrace{-\frac{3}{250}(100)^2+\frac{4}{5}(100)}_{\text{Resolviendo con calculadora.}} \\
+    f(100) &= -40
+  \end{split}
+\end{equation*}
+Ahora teniendo el punto (100,-40) que es Q, utilizamos la fórmula punto pendiente para obtener $L_2$.
+\begin{equation*}
+  \begin{split}
+    y+40 &= -\frac{8}{5}(x-100) \\
+    y+40 &= -\frac{8}{5}x+8(20) \\
+    y &= -\frac{8}{5}x+160-40 \\
+    y &= -\frac{8}{5}x+120
+  \end{split}
+\end{equation*}
+$\therefore L_2(x)=-\frac{8}{5}x+120$. \\
+\textbf{Graficando $L_1$, $f(x)$ y $L_2$ con geogebra:}
+\begin{center}
+  \includegraphics[width=15cm]{./imagenes/montañarusa1.png}
+\end{center}
+
+\subsubsection*{d) Encuentre la diferencia en la elevación entre P y Q}
+Sabemos que P está en el punto (0,0) y Q en (100,-40). \\
+$\therefore$ La diferencia de altura es de 40ft
+\subsection{Parte 2.}
+La solución del problema 1 puede \textit{parecer} suave, pero es posible que no \textit{sienta} lo suave debido a que la pieza definida como función [consistente en $L_1(x)$ para x<0, $f(x)$ para 0 $\leq$ x $\leq$ 100; y $L_2(x)$ para x>100] no tiene una segunda derivada contínua. Por consiguiente, usted decide mejorar su diseño utilizando una función cuadrática $q(x)=ax^2+bx+c$ únicamente en el intervalo 10 $\leq$ x $\leq$ 90 y conectarlo con las funciones lineales por medio de dos funciones cúbicas:
+\begin{equation*}
+  \begin{split}
+    g(x)=kx^3+lx^2+mx+n  &\text{  Para: } 0 \leq x < 10 \\
+    h(x)=px^3+qx^2+rx+s  &\text{  Para: } 90 \leq x < 100
+  \end{split}
+\end{equation*}
+\subsubsection*{a) Escriba un sistema de ecuaciones con 11 incógnitas que aseguren que las funciones y sus dos primeras derivadas coincidan en los puntos de transición.}
+\begin{equation*}
+  \begin{split}
+    \textbf{Ec. 1 } & L_1(0)=g(0) \\
+    \textbf{Ec. 2 } & g(10)=q(10) \\
+    \textbf{Ec. 3 } & q(90)=h(90) \\
+    \textbf{Ec. 4 } & h(100)=L(100) \\
+    \textbf{Ec. 5 } & L_1'(0)=g'(0) \\
+    \textbf{Ec. 6 } & g'(10)=q'(10) \\
+    \textbf{Ec. 7 } & q'(90)=h'(90) \\
+    \textbf{Ec. 8 } & h'(100)=L'(100) \\
+    \textbf{Ec. 9 } & L_1(0)=g(0) \\
+    \textbf{Ec. 10 } & g(10)=q(10) \\
+    \textbf{Ec. 11 } & q(90)=h(90) \\
+    \textbf{Ec. 12 } & h(100)=L(100)
+  \end{split}
+\end{equation*}
+De aquí, obtenemos primero las derivadas y segundas derivadas de todas las ecuaciones.
+\begin{equation*}
+  \begin{split}
+    L_1(x) &= \frac{4}{5}x \\
+    L_1'(x) &= \frac{4}{5} \\
+    L_1''(x) &= 0 \\
+    g(x) &= kx^3+lx^2+mx+n \\
+    g'(x) &= 3kx^2+2lx+m \\
+    g''(x) &= 6kx+2l \\
+    q(x) &= ax^2+bx+c \\
+    q'(x) &= 2ax+b \\
+    q''(x) &= 2a \\
+    h(x) &= px^3+qx^2+rx+s \\
+    h'(x) &= 3px^2+2qx+r \\
+    h''(x) &= 6px+2q \\
+    L_2(x) &= -\frac{8}{5}x+120 \\
+    L_2'(x) &= -\frac{8}{5} \\
+    L_2''(x) &= 0
+  \end{split}
+\end{equation*}
+De aquí, sustituyendo las funciones en el sistema de ecuaciones y evaluando x en sus respectivos puntos, tenemos el siguiente sistema de ecuaciones de 11 incognitas.
+\begin{equation}
+\begin{split}
+  1000k + 100l + 10m + n &= 100a + 10b + c \\
+  300k + 20l + m &= 20a + b \\
+  60k + 2l &= 2a \\
+  30k + l &= a \\
+  729000p + 8100q + 90r + s &= 8100a + 90b + c \\
+  24300p + 180q + r &= 180a + b \\
+  540p + 2q &= 2a \\
+  270p + q &= a \\
+  n &= 0 \\
+  m &= \frac{4}{5} \\
+  l &= 0 \\
+  1000000p + 10000q + 100r + s &= -40 \\
+  30000p + 200q + r &= -\frac{8}{5} \\
+  300p + q &= 0
+\end{split}
+\end{equation}
+
+\subsubsection*{b) Resuelva las ecuaciones del inciso a) con un sistema algebráico computarizado para encontrar las fórmulas para q(x), g(x) y h(x).}
+Utilizando python:
+\begin{verbatim}
+from sympy import symbols, Eq, solve
+# Definir las incógnitas
+a, b, c, k, l, m, n, p, q, r, s = symbols('a b c k l m n p q r s')
+# Ecuaciones según las condiciones dadas
+eq1 = Eq(1000*k + 100*l + 10*m + n, 100*a + 10*b + c)
+eq2 = Eq(300*k + 20*l + m, 20*a + b)
+eq3 = Eq(60*k + 2*l, 2*a)
+eq4 = Eq(30*k + l, a)
+eq5 = Eq(729000*p + 8100*q + 90*r + s, 8100*a + 90*b + c)
+eq6 = Eq(24300*p + 180*q + r, 180*a + b)
+eq7 = Eq(540*p + 2*q, 2*a)
+eq8 = Eq(270*p + q, a)
+eq9 = Eq(n, 0)
+eq10 = Eq(m, 4/5)
+eq11 = Eq(l, 0)
+eq12 = Eq(1000000*p + 10000*q + 100*r + s, -40)
+eq13 = Eq(30000*p + 200*q + r, -8/5)
+eq14 = Eq(300*p + q, 0)# Resolver el sistema de ecuaciones
+solution = solve((eq1, eq2, eq3, eq4, eq5, eq6, eq7, eq8, eq9, eq10, eq11, eq12, eq13, ...
+ eq14), (a, b, c, k, l, m, n, p, q, r, s))
+# Mostrar la solución
+solution
+\end{verbatim}
+que nos arroja:
+\begin{verbatim}
+{a: -0.0133333333333333,
+ b: 0.933333333333333,
+ c: -0.444444444444444,
+ k: -0.000444444444444444,
+ l: 0.0,
+ m: 0.800000000000000,
+ n: 0.0,
+ p: 0.000444444444444444,
+ q: -0.133333333333333,
+ r: 11.7333333333333,
+ s: -324.444444444444}
+\end{verbatim}
+Que sustituyendo en las funciones g(x), q(x) y h(x) nos da:
+\begin{equation*}
+  \begin{split}
+    g(x)=-0.000444x^3+0.8x &\text{  cuando  } 10 \leq x < 10 \\
+    h(x)=0.000444x^3-0.133x^2+11.7333x-324.4444 &\text{  cuando  } 90 \leq x < 100 \\
+    q(x) = -0.0133x^2+0.9333x-0.4444 &\text{  cuando  } 10 \leq x < 90
+  \end{split}
+\end{equation*}
+\subsubsection*{c) Dibuje $L_1$, $g(x)$, $q(x)$, $h(x)$ y $L_2(x)$ y comparelos con las gráficas del problema 1 inciso c).}
+\textbf{Graficando $L_1$, $f(x)$ y $L_2$ con geogebra:}
+\begin{center}
+  \includegraphics[width=15cm]{./imagenes/montañarusa2.png}
+\end{center}
+Aunque a simple vista se vean muy parecidos, es notorio el suavizado que hacen las funciones auxiliares de forma que es muy poco abrupta la transición de ir en linea recta a nuestro ascenso y descenso diseñados para llegar a la segunda recta.
+
 %------ Ejercicio 02 ------%
 \section*{¿Dónde debería un piloto iniciar el aterrizaje? sección 3.4 del Stewart }
 %------ Ejercicio 03 ------%
